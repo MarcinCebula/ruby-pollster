@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pollster (0.1.0)
+    pollster (0.2.3)
       json
 
 GEM

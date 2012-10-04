@@ -61,6 +61,7 @@ module Pollster
             :party            => estimate['party'],
             :incumbent        => estimate['incumbent']
           }
+        end
         if data[:estimates_by_date]
           data[:estimates_by_date] = data[:estimates_by_date].map do |x|
             estimate = hash_keys_to_sym(x)
