@@ -53,12 +53,12 @@ module Pollster
         data[:last_updated] = Time.parse(data[:last_updated])
         data[:estimates].map! do |estimate|
           {
-            :choice           => estimate['choice']
-            :value            => estimate['value']
-            :lead_confidence  => estimate['lead_confidence']
-            :first_name       => estimate['first_name']
-            :last_name        => estimate['last_name']
-            :party            => estimate['party']
+            :choice           => estimate['choice'],
+            :value            => estimate['value'],
+            :lead_confidence  => estimate['lead_confidence'],
+            :first_name       => estimate['first_name'],
+            :last_name        => estimate['last_name'],
+            :party            => estimate['party'],
             :incumbent        => estimate['incumbent']
           }
         if data[:estimates_by_date]
