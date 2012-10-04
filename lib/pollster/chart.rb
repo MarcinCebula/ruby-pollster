@@ -51,7 +51,16 @@ module Pollster
       def self.create(data)
         data = Hash[*data.map { |k, v| [k.to_sym, v] }.flatten(1)]
         data[:last_updated] = Time.parse(data[:last_updated])
-        data[:estimates].map! { |estimate| {:choice => estimate['choice'], :value => estimate['value'], :lead_confidence => estimate['lead_confidence']} }
+        data[:estimates].map! do |estimate|
+          {
+            :choice           => estimate['choice']
+            :value            => estimate['value']
+            :lead_confidence  => estimate['lead_confidence']
+            :first_name       => estimate['first_name']
+            :last_name        => estimate['last_name']
+            :party            => estimate['party']
+            :incumbent        => estimate['incumbent']
+          }
         if data[:estimates_by_date]
           data[:estimates_by_date] = data[:estimates_by_date].map do |x|
             estimate = hash_keys_to_sym(x)
